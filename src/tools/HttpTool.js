@@ -4,7 +4,7 @@
 
 import axios from 'axios/dist/axios.min'
 class HttpTool {
-    static test = false;
+    static test = true;
 
     static getQQurl() {
         return axios.get("/auth/qq/url");
