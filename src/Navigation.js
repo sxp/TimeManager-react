@@ -46,7 +46,11 @@ class Navigation extends React.Component {
                 }}/>);
             case 2:
             case 3:
-                return (<Welcome pid={this.state.pageId}/>);
+                return (<Welcome pid={this.state.pageId} loginSucess={()=>{
+                    this.setState({
+                        pageId: 1,
+                    });
+                }}/>);
             default:
                 return (<CircularProgress/>);
         }

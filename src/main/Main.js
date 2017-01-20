@@ -89,7 +89,7 @@ class Main extends React.Component {
                 >
                     {
                         this.state.logon ?
-                            <AccountMenu nick={this.state.account.qqNick} menuList={this.getMenuList()}
+                            <AccountMenu nick={this.state.account.name} menuList={this.getMenuList()}
                                          hide={this.state.accMenuHide}/>
                             :
                             <div/>

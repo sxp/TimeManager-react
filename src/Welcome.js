@@ -23,9 +23,9 @@ class App extends Component {
 
     switchPage() {
         if (this.state.pid == 2) {
-            return (<Login/>);
+            return (<Login loginSuccess={this.props.loginSucess}/>);
         } else {
-            return (<Signup/>);
+            return (<Signup loginSuccess={this.props.loginSucess}/>);
         }
     }
 

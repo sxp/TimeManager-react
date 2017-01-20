@@ -4,7 +4,7 @@
 
 import axios from 'axios/dist/axios.min'
 class HttpTool {
-    static test = true;
+    static test = false;
 
     static getQQurl() {
         return axios.get("/auth/qq/url");
@@ -117,6 +117,31 @@ class HttpTool {
     static logout() {
         if (!HttpTool.test) {
             return axios.post("/logout");
+        }
+    }
+
+    static signUp(nick, email, psw1, psw2) {
+        if (HttpTool.test) {
+            return axios.get("/json/register");
+        } else {
+            return axios.post("/register", {
+                email: email,
+                name: nick,
+                password: psw1,
+                password_confirmation: psw2
+            });
+        }
+    }
+
+    static login(email, psw, remember) {
+        if (HttpTool.test) {
+            return axios.get("/json/login");
+        } else {
+            return axios.post("/login", {
+                email: email,
+                password: psw,
+                remember: remember
+            });
         }
     }
 }
